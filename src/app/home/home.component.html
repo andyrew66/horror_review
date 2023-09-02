@@ -1,0 +1,58 @@
+<!-- home.component.html -->
+<div class="home-container">
+    <section class="featured-movie">
+        <h1>Featured Movies</h1>
+        <div class="carousel">
+          <div class="carousel-item" *ngFor="let movie of featuredMovies; let i = index" [ngClass]="{ 'active': i === currentSlide }">
+            <img [src]="movie.poster" alt="Movie Poster">
+            <h2>{{ movie.title }}</h2>
+            <p>{{ movie.synopsis }}</p>
+            <a [href]="movie.trailerLink">Watch Trailer</a>
+          </div>
+        </div>
+        <button class="carousel-button prev" (click)="prevSlide()">&lt;</button>
+        <button class="carousel-button next" (click)="nextSlide()">&gt;</button>
+      
+      </section>
+      
+    
+    <section class="latest-reviews">
+        <h1>Latest Reviews</h1>
+        <div class="review-card" *ngFor="let review of latestReviews">
+          <h2>{{ review.title }}</h2>
+          <p>{{ review.summary }}</p>
+          <a href="#">Read More</a>
+        </div>
+      </section>
+      
+    
+      <div class="newsletter-popup" *ngIf="showNewsletterPopup">
+        <div class="popup-content">
+          <span class="close-button" (click)="closePopup()">&times;</span>
+          <h1>Subscribe to our Newsletter</h1>
+          <p>Stay updated with the latest horror movie reviews, news, and special offers.</p>
+          <form (submit)="subscribeToNewsletter($event)">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+      
+      
+    
+    <section class="trending-movies">
+      <!-- Trending movies carousel -->
+      <h1>Trending Movies</h1>
+    </section>
+    
+    <section class="social-media">
+      <!-- Social media links -->
+      <h1>Follow Us</h1>
+    </section>
+    
+    <section class="random-movie">
+      <!-- Random movie generator button -->
+      <h1>Random Movie Generator</h1>
+    </section>
+  </div>
+  

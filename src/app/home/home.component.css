@@ -1,0 +1,165 @@
+/* home.component.css */
+.home-container {
+    padding: 2rem;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 2px solid neonpink;
+    color: white;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  /* home.component.css */
+.review-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ff1493; /* Neon pink for the '80s vibe */
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .review-card p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .review-card a {
+    color: #ff1493; /* Neon pink */
+    text-decoration: none;
+  }
+  
+  .review-card a:hover {
+    text-decoration: underline;
+  }
+  
+  /* home.component.css */
+.featured-movie {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .featured-movie img {
+    max-width: 300px;
+    border: 2px solid #ff1493; /* Neon pink for the '80s vibe */
+    margin-bottom: 1rem;
+  }
+  
+  .featured-movie h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .featured-movie p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .featured-movie a {
+    color: #ff1493; /* Neon pink */
+    text-decoration: none;
+  }
+  
+  .featured-movie a:hover {
+    text-decoration: underline;
+  }
+  /* home.component.css */
+  .carousel {
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .carousel-item {
+    flex: 0 0 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: none;  /* Add this line */
+  }
+  
+  .carousel-item.active {
+    opacity: 1;
+    display: block;  /* Add this line */
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ff1493; /* Neon pink */
+  }
+  
+  button:focus {
+    outline: none;
+  }
+    
+  /* CSS */
+  .carousel-button {
+    background-color: rgba(255, 255, 255, 0.774); /* Semi-transparent white */
+    border: 2px solid #ff1493; /* Neon pink */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ff1493; /* Neon pink */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .carousel-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .prev {
+    left: 10px;  /* Adjust as needed */
+  }
+  
+  .next {
+    right: 10px;  /* Adjust as needed */
+  }
+  
+  .carousel-button:focus {
+    outline: none;
+  }
+  .newsletter-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
