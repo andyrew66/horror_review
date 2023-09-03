@@ -1,0 +1,83 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: 0.3s;
+    color: white;
+    font-size: 1.2rem;  /* Adjust font size */
+    z-index: 1000;  /* Add this line */
+    transition: width 0.3s ease-in-out;  /* Updated transition with easing */
+  }
+  
+  .sidebar.open {
+    width: 300px;  /* Increase the width */
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    min-height: 60px;  /* Set a minimum height */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Vertically center the content */
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #ff1493;
+    display: flex;
+    padding: 30px;
+    transition: background-color 0.3s ease-in-out;
+    align-items: stretch;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: xx-large;
+  }
+  
+  .sidebar a:hover {
+    background-color: #575757;
+    color: #fff;  /* Make text white on hover */
+  }
+
+  .sidebar a.active {
+    background-color: #ff1493;  /* Neon pink */
+    color: #fff;  /* White text */
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 36px;
+    cursor: pointer;
+  }
+/* Existing styles */
+
+/* ... */
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    .sidebar.open {
+      width: 70%;  /* Take up 70% of the screen width on small screens */
+    }
+  
+    .sidebar {
+      font-size: 1rem;  /* Adjust font size */
+
+    }
+  
+    .close-button {
+      font-size: 30px;  /* Adjust close button size */
+    }
+  
+    .sidebar a {
+      padding: 12px;  /* Adjust padding */
+    }
+  }
+    
+  
