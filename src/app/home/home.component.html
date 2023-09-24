@@ -2,16 +2,7 @@
 <div class="home-container">
     <section class="featured-movie">
         <h1>Featured Movies</h1>
-        <div class="carousel">
-          <div class="carousel-item" *ngFor="let movie of featuredMovies; let i = index" [ngClass]="{ 'active': i === currentSlide }">
-            <img [src]="movie.poster" alt="Movie Poster">
-            <h2>{{ movie.title }}</h2>
-            <p>{{ movie.synopsis }}</p>
-            <a [href]="movie.trailerLink">Watch Trailer</a>
-          </div>
-        </div>
-        <button class="carousel-button prev" (click)="prevSlide()">&lt;</button>
-        <button class="carousel-button next" (click)="nextSlide()">&gt;</button>
+        <app-carousel [items]="featuredMovies"></app-carousel>
       
       </section>
       
@@ -43,6 +34,7 @@
     <section class="trending-movies">
       <!-- Trending movies carousel -->
       <h1>Trending Movies</h1>
+      <app-carousel [items]="featuredMovies"></app-carousel>
     </section>
     
     <section class="social-media">
@@ -53,6 +45,7 @@
     <section class="random-movie">
       <!-- Random movie generator button -->
       <h1>Random Movie Generator</h1>
+      <app-carousel [items]="featuredMovies"></app-carousel>
     </section>
   </div>
   

@@ -1,9 +1,12 @@
-<div class="sidebar" [ngClass]="{ 'open': isOpen }">
-  <span class="close-button" (click)="toggleSidebar()">&times;</span>
+<div class="sidebar" [ngClass]="{'open': isOpen, 'mobile-view': isMobileView}">
   <ul>
-    <li><a href="#" class="active">🏠 Home</a></li>  <!-- Added icon -->
-    <li *ngFor="let category of categories">
-      <a href="#">📁 {{ category }}</a>  <!-- Added icon -->
+    <li *ngFor="let menuItem of menuItems">
+      <a href="#" (click)="toggleSubmenu(menuItem.name)">{{ menuItem.name }}</a>
+      <ul *ngIf="showSubmenu[menuItem.name] && menuItem.hasSubmenu">
+        <li *ngFor="let category of categories">
+          <p><a [routerLink]="'/movies/'+category">{{ category }}</a> </p>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>

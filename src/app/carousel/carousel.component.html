@@ -1,0 +1,17 @@
+<div class="carousel">
+    <div class="carousel-item" *ngFor="let item of items; let i = index" [ngClass]="{ 'active': i === currentSlide }">
+
+
+      <img [src]="item.poster" alt="Movie Poster">
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.synopsis }}</p>
+      <ul>
+
+      <li><a [routerLink]="'/review/'+item.moreInfo">More Info</a></li>
+      <li><a routerLink="/movies" routerLinkActive="active">Movies</a></li>
+      <li><a [href]="item.trailerLink">Watch Trailer</a></li>
+      </ul>
+    </div>
+    <button class="carousel-button prev" (click)="prevSlide()">&lt;</button>
+    <button class="carousel-button next" (click)="nextSlide()">&gt;</button>
+  </div>

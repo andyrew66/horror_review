@@ -1,0 +1,9 @@
+<div class="genre-list">
+    <h2>Genres</h2>
+    <ul>
+      <li *ngFor="let genre of genres">
+        <a [routerLink]="['/genres', genre]">{{ genre }}</a>
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fright-light-horror-reviews": {
+      "hosting": {
+        "horror_review": [
+          "fright-light-horror-reviews"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fright-light-horror-reviews"
+  }
+}

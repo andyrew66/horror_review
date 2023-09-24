@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "horror_review",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

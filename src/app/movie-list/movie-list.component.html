@@ -1,1 +1,10 @@
-<p>movie-list works!</p>
+<div class="movies-container">
+    <div *ngFor="let movie of movies" class="movie-card">
+      <img [src]="movie.poster" alt="{{movie.title}} Poster">
+      <h3>{{movie.title}}</h3>
+      <p>Genre: {{movie.genre}}</p>
+      <p>{{movie.shortReview}}</p>
+      <p><a [routerLink]="'/review/'+movie.ID">More Info</a> </p>
+    </div>
+  </div>
+  

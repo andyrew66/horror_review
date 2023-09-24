@@ -1,0 +1,51 @@
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 2s;
+    flex-wrap: wrap;  /* Added for responsiveness */
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .active {
+    border-bottom: 2px solid #ff00de;
+  }
+  
+  
+  nav a:hover {
+    color: #ff00de;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  
+  @media only screen and (max-width: 768px) {
+    footer {
+      flex-direction: column;  /* Added for responsiveness */
+    }
+  
+    .quick-links ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  

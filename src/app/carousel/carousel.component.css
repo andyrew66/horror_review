@@ -1,0 +1,111 @@
+/* Container to hold the carousel items */
+
+
+/* Individual carousel items */
+
+
+/* Active carousel item */
+
+
+/* Image settings */
+
+
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+}
+  .carousel-item {
+    flex: 0 0 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: none;  /* Add this line */
+  }
+  
+  .carousel-item.active {
+    opacity: 1;
+    display: block;  /* Add this line */
+  }
+  .carousel-item img {
+    max-height: 708px;  /* You can set this to the maximum height you want */
+    width: auto;
+    object-fit: cover;
+    display: block;  /* Removes any margins or padding from the image itself */
+    margin: auto;  /* Centers the image in its container */
+  }
+  
+  
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ff1493; /* Neon pink */
+  }
+  
+  button:focus {
+    outline: none;
+  }
+    
+  /* CSS */
+  .carousel-button {
+    background-color: rgba(255, 255, 255, 0.774); /* Semi-transparent white */
+    border: 2px solid #ff1493; /* Neon pink */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ff1493; /* Neon pink */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  .carousel-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .prev {
+    left: 10px;  /* Adjust as needed */
+  }
+  
+  .next {
+    right: 10px;  /* Adjust as needed */
+  }
+  
+  .carousel-button:focus {
+    outline: none;
+  }
+
+
+  .carousel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .carousel img {
+    max-width: 300px;
+    border: 2px solid #ff1493; /* Neon pink for the '80s vibe */
+    margin-bottom: 1rem;
+  }
+  
+  .carousel h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .carousel p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .carousel a {
+    color: #ff1493; /* Neon pink */
+    text-decoration: none;
+  }
+  
+  .carousel a:hover {
+    text-decoration: underline;
+  }

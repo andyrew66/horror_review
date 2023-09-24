@@ -1,0 +1,41 @@
+
+  <!-- Hero Section -->
+  <section class="section hero-section">
+    <img src={{poster}} alt="Movie Poster">
+    <div class="hero-content">
+      <h1>{{reviewTitle}}</h1>
+      <p>Title: {{movie}} </p>
+      <p>Genre: {{genre}} </p>
+      <p>Release Date: {{releaseDate}} </p>
+      <p>Director: {{director}}</p>
+      <p>Starring:{{starring}} </p>
+      <p>Running Time: {{runTime}}</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="section main-content">
+    <!-- Overall Rating -->
+    <div class="overall-rating">
+      <h2>Overall Rating: ★★★★☆ {{rating}}</h2>
+    </div>
+
+    <!-- Review Content -->
+    <article class="review-content">
+      <h2>Review</h2>
+      <div [innerHTML]="review"></div>
+    </article>
+
+    <!-- Author Info -->
+    <aside class="author-info">
+      <h2>About the Author</h2>
+      <p>...</p>
+    </aside>
+
+    <!-- Gallery -->
+    <section class="gallery">
+      <h2>Gallery</h2>
+      <app-carousel [items]="featuredMovies"></app-carousel>
+      <!-- ... -->
+    </section>
+  </main>

@@ -37,6 +37,7 @@ header {
     padding: 0;
     display: flex;
     gap: 1rem;
+    flex-direction: row;
   }
   
   nav a {
@@ -101,7 +102,7 @@ header {
     
   
     nav ul {
-      flex-direction: column;
+      flex-direction: l;
       align-items: center;
     }
   }

@@ -1,0 +1,78 @@
+/* Hero Section */
+.hero-section {
+  background: url('https://m.media-amazon.com/images/S/pv-target-images/b1ade61fbaec940965cc30ddf4ecbc300ea722b9cc4ab564a5563cfe197980cc._UR1920,1080_.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 2s;
+
+}
+
+.hero-section img{
+    max-width: 300px;
+    border: 2px solid #ff1493; /* Neon pink for the '80s vibe */
+    margin-bottom: 1rem;
+  }
+
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+}
+
+.overall-rating, .review-content, .author-info, .gallery {
+  margin-bottom: 2rem;
+}
+
+/* Gallery */
+.gallery img {
+  
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.gallery{
+  scroll-snap-align: none;
+}
+.container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* Individual sections */
+.section {
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
+.overlay {
+  transition: opacity 0.3s ease;
+}
+
+.overlay:hover {
+  opacity: 0.7;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Main Content */
+.main-content {
+  width: 80%; 
+  margin: auto; 
+  padding: 20px;
+}
+.paragraph-wrap {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.image-wrap {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+
+
+
