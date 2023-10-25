@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from '/b_hrrr_movie_app/horror_review/src/environments/environment';
+//import { environment } from '/b_hrrr_movie_app/horror_review/src/environments/environment';
 
 // Initialize Firebase
 

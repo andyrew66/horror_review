@@ -1,7 +1,6 @@
 /* Hero Section */
 .hero-section {
-  background: url('https://m.media-amazon.com/images/S/pv-target-images/b1ade61fbaec940965cc30ddf4ecbc300ea722b9cc4ab564a5563cfe197980cc._UR1920,1080_.jpg') no-repeat center center;
-  background-size: cover;
+  background-size: cover !important;
   color: #fff;
   text-align: center;
   animation: fadeIn 2s;
@@ -38,6 +37,25 @@
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+iframe {
+  display: block;
+  margin: auto;
+  width: 80%;
+
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 520px;
+}
+
+
 
 /* Individual sections */
 .section {
@@ -72,6 +90,15 @@
   display: flex;
   align-items: stretch;
   justify-content: space-evenly;
+}
+/* Increase the size of all text within the review-content article */
+.review-content {
+  font-size: 1.5em; /* Adjust this value to your preference */
+}
+
+/* Optional: Increase the size of h2 elements within the review-content article */
+.review-content h2 {
+  font-size: 2em; /* Adjust this value to your preference */
 }
 
 

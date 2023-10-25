@@ -11,8 +11,8 @@
         <h1>Latest Reviews</h1>
         <div class="review-card" *ngFor="let review of latestReviews">
           <h2>{{ review.title }}</h2>
-          <p>{{ review.summary }}</p>
-          <a href="#">Read More</a>
+          <p>{{ review.shortSummary }}</p>
+          <a [routerLink]="['/movie', review.code]">Read More</a>
         </div>
       </section>
       
@@ -38,9 +38,13 @@
     </section>
     
     <section class="social-media">
-      <!-- Social media links -->
+      <a href="https://www.facebook.com/profile.php?id=61551123522672" target="_blank">
+        <img class="Facebook" src="/assets/image-from-rawpixel-id-6674213-original.png">
+      </a>
+      
       <h1>Follow Us</h1>
     </section>
+    
     
     <section class="random-movie">
       <!-- Random movie generator button -->

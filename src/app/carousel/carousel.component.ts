@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-carousel',
@@ -8,9 +9,13 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CarouselComponent implements OnInit {
   @Input() items: any[] = [];  // Declare as Input to receive from parent component
   currentSlide: number = 0;  // Initialize to 0
+  constructor(private dataService: DataService) {}  // Inject DataService
 
   ngOnInit(): void {
-    // Optional: Additional initialization logic
+    this.dataService.getFeaturedMovies().subscribe(items => {
+      this.items = items;
+    });
+
   }
 
   nextSlide() {

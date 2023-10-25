@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DataService } from '../data.service';
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   showNewsletterPopup = false;
-
-  latestReviews = [
-    { title: 'Movie 1', summary: 'This is a great movie.' },
-    { title: 'Movie 2', summary: 'This is another great movie.' },
-    { title: 'Movie 3', summary: 'Yet another great movie.' }
-  ];
+  latestReviews: any[] = [];
+  //latestReviews = [
+  //  { title: 'Movie 1', summary: 'This is a great movie.' },
+  //  { title: 'Movie 2', summary: 'This is another great movie.' },
+  //  { title: 'Movie 3', summary: 'Yet another great movie.' }
+ // ];
 
   featuredMovies = [
     { poster: 'https://www.blackhorrormovies.com/wp-content/uploads/2016/06/Vamp-2-large.jpg', title: 'Vamp', synopsis: 'Synopsis 1', trailerLink: '#',moreInfo:"1" },
@@ -20,12 +21,22 @@ export class HomeComponent implements OnInit {
     // ...more movies
   ];
 
-  constructor() { }
+  constructor(private dataService: DataService, private meta: Meta, private title: Title) {  
+    this.title.setTitle('Fine Fright Reviews - Your Ultimate Guide to Horror Movies');
+    this.meta.addTag({ name: 'description', content: 'Dive into the spine-chilling world of horror with Fine Fright Reviews. From classic scares to modern nightmares, we bring you unbiased reviews to help you pick your next fright night flick.' });
+  }
 
   ngOnInit() {
+
+    this.dataService.getLatestReviews().subscribe(items => {
+      this.latestReviews = items;
+      console.log(this.latestReviews)
+    });
     setTimeout(() => {
-      this.showNewsletterPopup = true;
+      //this.showNewsletterPopup = true;
     }, 30000); // Show after 30 seconds
+
+    
   }
   
 

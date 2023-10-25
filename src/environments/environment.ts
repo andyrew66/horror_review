@@ -1,4 +1,5 @@
 export const environment = {
+  production: false,
   firebase: {
     projectId: 'fright-light-horror-reviews',
     appId: '1:1064163179373:web:eff8dc331f13d5802b7864',

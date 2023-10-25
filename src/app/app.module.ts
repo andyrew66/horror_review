@@ -14,11 +14,10 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ReviewPageComponent } from './review-page/review-page.component';
 import { GenreListComponent } from './genre-list/genre-list.component';
 import { environment } from '../environments/environment';
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule  // <-- Add this line
-  ]
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'
 
 @NgModule({
   declarations: [
@@ -36,7 +35,11 @@ import { environment } from '../environments/environment';
   ],  imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule  // <-- Add this line
+    RouterModule,  // <-- Add this line
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
 
   bootstrap: [AppComponent]

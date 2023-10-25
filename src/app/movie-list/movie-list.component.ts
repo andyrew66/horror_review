@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../data.service';  // Import DataService
+
 
 @Component({
   selector: 'app-movie-list',
@@ -9,27 +11,35 @@ import { ActivatedRoute } from '@angular/router';
 
 export class MovieListComponent implements OnInit {
   genre: string | null = null;
-  movies: any[] = [
-    { title: 'Movie1', genre: 'Action', poster: 'https://www.blackhorrormovies.com/wp-content/uploads/2016/06/Vamp-2-large.jpg', ID:1, shortReview:"'A cult classic that offers a unique twist on the vampire genre.';" },
-    { title: 'Movie2', genre: 'Action', poster: 'https://www.blackhorrormovies.com/wp-content/uploads/2016/06/Vamp-2-large.jpg', ID:1 },
-    { title: 'Movie3', genre: 'Horror', poster: 'https://www.blackhorrormovies.com/wp-content/uploads/2016/06/Vamp-2-large.jpg', ID:1 },
-    { title: 'Movie4', genre: 'Comedy', poster: 'https://www.blackhorrormovies.com/wp-content/uploads/2016/06/Vamp-2-large.jpg', ID:1 },
-    { title: 'Movie5', genre: 'Comedy', poster: 'https://www.blackhorrormovies.com/wp-content/uploads/2016/06/Vamp-2-large.jpg', ID:1, shortReview:"'A cult classic that offers a unique twist on the vampire genre.';" },
-    // ... add more mock data
-  ];
+  movies: any[] = [];  // Initialize as an empty array
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private dataService: DataService) {  // Inject DataService
+  }
 
   ngOnInit(): void {
+    // Subscribe to get all movies
+    this.dataService.getReviews().subscribe(
+      movies => {
+        console.log("Received movies:", movies);  // Log the received movies
+        this.movies = movies;
+      },
+      error => {
+        console.error("An error occurred:", error);  // Log any errors
+      }
+    );
+  
+    // Handle route parameters (if applicable)
     this.route.paramMap.subscribe(params => {
       this.genre = params.get('genre');
       this.fetchMovies();
     });
   }
+  
 
   fetchMovies(): void {
     if (this.genre) {
       this.movies = this.movies.filter(movie => movie.genre === this.genre);
+      console.log(this.movies)
     }
     // If this.genre is null, show all movies, so no need to filter.
   }

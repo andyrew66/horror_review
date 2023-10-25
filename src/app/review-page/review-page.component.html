@@ -1,6 +1,7 @@
 
   <!-- Hero Section -->
-  <section class="section hero-section">
+  <section class="section hero-section"  [ngStyle]="{'background': heroImage, 'background-size': 'cover'}" >
+    
     <img src={{poster}} alt="Movie Poster">
     <div class="hero-content">
       <h1>{{reviewTitle}}</h1>
@@ -12,18 +13,30 @@
       <p>Running Time: {{runTime}}</p>
     </div>
   </section>
-
+  
   <!-- Main Content -->
   <main class="section main-content">
     <!-- Overall Rating -->
     <div class="overall-rating">
-      <h2>Overall Rating: ★★★★☆ {{rating}}</h2>
+      <h2>Overall Rating: <span *ngFor="let star of stars">{{ star }}</span> {{ rating }}/10</h2>
     </div>
+
+
+      <iframe 
+        [src]="safeTrailerUrl" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+ 
+    
+
 
     <!-- Review Content -->
     <article class="review-content">
       <h2>Review</h2>
-      <div [innerHTML]="review"></div>
+      <div [innerHTML]="safeHTMLReview"></div>
     </article>
 
     <!-- Author Info -->
