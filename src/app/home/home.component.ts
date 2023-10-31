@@ -16,14 +16,14 @@ export class HomeComponent implements OnInit {
  // ];
 
   featuredMovies = [
-    { poster: 'https://www.blackhorrormovies.com/wp-content/uploads/2016/06/Vamp-2-large.jpg', title: 'Vamp', synopsis: 'Synopsis 1', trailerLink: '#',moreInfo:"1" },
-    { poster: 'https://i.pinimg.com/originals/d3/1f/6a/d31f6a87e75558da4c3edcca09d76296.jpg', title: 'Lost Boys', synopsis: 'Synopsis 2', trailerLink: '#', moreInfo:"1"},
-    // ...more movies
+ // ...more movies
   ];
 
   constructor(private dataService: DataService, private meta: Meta, private title: Title) {  
     this.title.setTitle('Fine Fright Reviews - Your Ultimate Guide to Horror Movies');
     this.meta.addTag({ name: 'description', content: 'Dive into the spine-chilling world of horror with Fine Fright Reviews. From classic scares to modern nightmares, we bring you unbiased reviews to help you pick your next fright night flick.' });
+    this.meta.updateTag({ name: 'description', content: 'Fine Fright Reviews is your go-to source for in-depth horror and cult movie reviews. Our team of expert movie critics provide unbiased reviews on a wide range of physical media releases. From Arrow Video classics to the latest frights, we\'ve got you covered.' });
+
   }
 
   ngOnInit() {

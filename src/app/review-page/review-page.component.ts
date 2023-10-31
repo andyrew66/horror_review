@@ -40,7 +40,7 @@ export class ReviewPageComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private dataService: DataService,private sanitizer: DomSanitizer) {
     // Replace 'yourYouTubeUrlHere' with the actual YouTube URL
-    this.safeTrailerUrl = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/_PkpUEHiefM?si=adT7WiqWafmriajr");
+    this.safeTrailerUrl = this.sanitizer.bypassSecurityTrustResourceUrl('this.reviewData.trailerLink');
     this.safeHTMLReview = this.sanitizer.bypassSecurityTrustHtml('this.reviewData.reviewHTML');
 
   }
@@ -99,7 +99,8 @@ export class ReviewPageComponent implements OnInit {
         this.heroImage = `url('${data.heroImage}') no-repeat center center`; // Assuming heroImage is the field name in Firestore
         this.trailer = data.trailerLink
         this.safeHTMLReview = this.sanitizer.bypassSecurityTrustHtml(this.reviewData.reviewHTML);
-        this.safeTrailerUrl = this.sanitizer.bypassSecurityTrustUrl(data.trailerLink);
+        //this.safeTrailerUrl = this.sanitizer.bypassSecurityTrustUrl(data.trailerLink);
+        this.safeTrailerUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.reviewData.trailerLink);
         console.log('Safe Trailer URL:', this.safeTrailerUrl);
         console.log('Raw Trailer URL:', data.trailerLink);
 
